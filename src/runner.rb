@@ -1,5 +1,12 @@
-require File.expand_path(File.dirname(__FILE__) + '/problems/problem1')
+$LOAD_PATH.unshift(File.dirname(__FILE__))
 
-prob1 = Problems::Problem1.new
-prob1.description
-prob1.run
+require 'problems/all_problems'
+
+problems.each { |id, problem|
+  puts "----------------------------#{problem.name}--------------------------------------------"
+  puts ""
+  puts ""
+  problem.solve
+  puts ""
+  puts ""
+}
