@@ -5,11 +5,7 @@ class Problem1 < EulerProblem
 Find the sum of all the multiples of 3 or 5 below 1000."
   end
 
-  def name
-    "Problem 1"
-  end
-
-  def run
+  def answer
     sum = 0
     (1..999).each do |number|
       if multiple_of_3_or_5(number)

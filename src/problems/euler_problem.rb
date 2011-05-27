@@ -1,11 +1,5 @@
 class EulerProblem
-
-  def name
-    "Please define a name"
-  end
-
   def solve
-    puts "#{description}  ==============>   #{run}"
+    puts "#{description}  ==============>   #{answer}"
   end
-
 end
