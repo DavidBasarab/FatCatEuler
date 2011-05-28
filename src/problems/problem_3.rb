@@ -1,4 +1,3 @@
-require 'prime'
 require 'prime_helper'
 
 class Problem3 < EulerProblem

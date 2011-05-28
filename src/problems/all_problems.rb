@@ -5,13 +5,20 @@ require "euler_problem"
 require "problem1"
 require "problem2"
 require "problem_3"
+require "problem_4"
 
 def problems
   problems = Hash.new
   problems["Problem 1"] = Problem1.new
   problems["Problem 2"] = get_problem_2
   problems["Problem 3"] = get_problem_3
+  problems["Problem 4"] = get_problem_4
   problems
+end
+
+def get_problem_4
+  prob = Problem4.new
+  prob
 end
 
 def get_problem_2
