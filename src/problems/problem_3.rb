@@ -1,4 +1,5 @@
 require 'prime'
+require 'prime_helper'
 
 class Problem3 < EulerProblem
   attr_accessor :number
@@ -13,25 +14,40 @@ What is the largest prime factor of the number 600851475143 ?"
   end
 
   def factors
-    current_number = @number
-    factors = Array.new
-    primes_for_number.each { |n|
-      begin
-        if current_number % n == 0
-          factors << n
-          current_number = current_number / n
-        end
-      end while current_number % n == 0
-    }
-    factors
+    @current_number = @number
+    @factors = Array.new
+    @current_factor = 0
+    find_factors
+    @factors
   end
 
-  def primes_for_number
-    primes = Array.new
-    Prime.each(@number) {|n|
-      primes << n
-    }
-    primes
+  def find_factors
+    increment_current_factor
+    add_factors_for_current_number
+    find_factors if factoring_not_complete
+  end
+
+  def factoring_not_complete
+    @current_number > @current_factor
+  end
+
+  def factor_of_current_number
+    @current_number % @current_factor == 0
+  end
+
+  def get_next_current_number
+    @current_number = @current_number / @current_factor
+  end
+
+  def increment_current_factor
+    @current_factor = @current_factor.next_prime
+  end
+
+  def add_factors_for_current_number
+    while factor_of_current_number
+        @factors << @current_factor
+        get_next_current_number
+    end
   end
 
 end
