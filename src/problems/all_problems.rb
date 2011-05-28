@@ -7,9 +7,9 @@ require "problem_3"
 
 def problems
   problems = Hash.new
-  problems["Problem 3"] = get_problem_3
-  problems["Problem 2"] = get_problem_2
   problems["Problem 1"] = Problem1.new
+  problems["Problem 2"] = get_problem_2
+  problems["Problem 3"] = get_problem_3
   problems
 end
 
