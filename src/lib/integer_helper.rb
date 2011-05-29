@@ -18,5 +18,13 @@ class Integer
     number == number.reverse
   end
 
+  def multiples(limit)
+    count = 1
+    while count <= limit
+      yield count * self
+      count = count + 1
+    end
+  end
+
 end
 

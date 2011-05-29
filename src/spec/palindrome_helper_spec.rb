@@ -2,12 +2,8 @@ require "spec_helper"
 
 describe Integer do
 
-  before(:each) do
-    @helper = 9
-  end
-
-  it "should respond to problem methods" do
-    @helper.should respond_to(:palindromic?)
+  it "should respond to palindromic? method" do
+    9.should respond_to(:palindromic?)
   end
 
   it "will say all numbers less than 10 are palindromic" do
