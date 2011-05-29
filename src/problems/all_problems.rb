@@ -19,6 +19,7 @@ end
 
 def get_problem_4
   prob = Problem4.new
+  prob.digits = 3
   prob
 end
 

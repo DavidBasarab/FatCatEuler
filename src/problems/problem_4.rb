@@ -1,6 +1,6 @@
 class Problem4 < EulerProblem
 
-  attr_accessor :number
+  attr_accessor :digits
 
 
   def description
@@ -9,9 +9,27 @@ class Problem4 < EulerProblem
   end
 
   def answer
-
+    dromes = Array.new
+    first_digit = stop_number
+    while first_digit > start_number do
+      second_digit = stop_number
+      while second_digit > start_number do
+        product = first_digit * second_digit
+        dromes << product if product.palindromic?
+        second_digit = second_digit - 1
+      end
+      first_digit = first_digit - 1
+    end
+    dromes = dromes.sort
+    dromes.last
   end
 
+  def stop_number
+    10**@digits - 1
+  end
 
+  def start_number
+    10**(@digits - 1)
+  end
 
 end

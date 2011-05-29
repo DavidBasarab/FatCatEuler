@@ -15,7 +15,6 @@ class Integer
 
   def palindromic?
     number = self.to_s
-    puts "number = #{number}"
     number == number.reverse
   end
 
