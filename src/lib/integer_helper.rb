@@ -13,5 +13,11 @@ class Integer
     next_prime
   end
 
+  def palindromic?
+    number = self.to_s
+    puts "number = #{number}"
+    number == number.reverse
+  end
+
 end
 

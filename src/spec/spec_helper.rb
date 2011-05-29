@@ -4,4 +4,4 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', "lib"))
 
 require 'rspec'
 require 'all_problems'
-require 'prime_helper'
+require 'integer_helper'

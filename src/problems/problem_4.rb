@@ -12,10 +12,6 @@ class Problem4 < EulerProblem
 
   end
 
-  def palindromic?
-     if @number < 100
-       @number % 11 == 0
-     end
-  end
+
 
 end
