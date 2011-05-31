@@ -7,7 +7,24 @@ What is the smallest positive number that is evenly divisible by all of the numb
   end
 
   def answer
+    @top_range.multiples(max_possible_value) { |number|
+      return number if evenly_divisible(number)
+    }
+  end
 
+  def max_possible_value
+    max_value = 1
+    2.upto(@top_range).each { |x|
+      max_value = x * max_value
+    }
+    max_value
+  end
+
+  def evenly_divisible(number)
+     2.upto(@top_range).each { |x|
+      return false if number % x != 0
+     }
+    true
   end
 
 end

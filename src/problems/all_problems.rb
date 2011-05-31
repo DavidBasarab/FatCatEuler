@@ -21,6 +21,7 @@ end
 
 def get_problem_5
   prob = Problem5.new
+  prob.top_range = 20
   prob
 end
 
